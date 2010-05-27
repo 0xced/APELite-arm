@@ -1,7 +1,7 @@
 About
 =====
 
-**APELite+arm** is set of commands that adds iPhone OS (ARM) support to [APE Lite][1]. Although APELite+arm involves heavy hacking, it does work on non-jailbroken devices.
+**APELite+arm** is an implementation of the [APE Lite][1] API for iPhone OS (ARM) using [MobileSubstrate][2]. Although APELite+arm involves heavy hacking, it does work on non-jailbroken devices.
 
 Building
 ========
@@ -11,7 +11,7 @@ Requirements: iPhone SDK 3.1.3
     ./setup.sh
     make
 
-Running the setup script will download and install APE Lite and Mobile Substrate.
+Running the setup script will download and install APE Lite and MobileSubstrate.
 
 Running make will create a new `APELite.o` object file with ARM support. You can check with `file APELite.o`. The original `APELite.o` file (ppc/i386/x86_64) is preserved in the `APE Lite` directory.
 
@@ -20,10 +20,12 @@ Usage
 
  1. Add APELite.h and the newly created APELite.o to your Xcode project.
  2. If your project does not include any C++, add `-lstdc++` to the *Other Linker Flags* (OTHER_LDFLAGS) build setting of your target.
+ 3. Have fun with `APEFindSymbol()` and `APEPatchCreate()`
 
 TODO
 ====
 
- * Implement `APEPatchGetAddress` and `APEPatchSetAddress`
+ * Implement `APEPatchGetAddress()` and `APEPatchSetAddress()`
 
-[1]: http://www.unsanity.com/haxies/apesdk
+[1]: http://www.unsanity.com/haxies/apesdk/
+[2]: http://svn.saurik.com/repos/menes/trunk/mobilesubstrate/

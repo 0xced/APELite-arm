@@ -19,7 +19,7 @@ hdiutil detach -force "/Volumes/Application Enhancer SDK"
 
 
 
-status "Downloading Mobile Substrate"
+status "Downloading MobileSubstrate"
 svn checkout http://svn.saurik.com/repos/menes/trunk/mobilesubstrate mobilesubstrate
 
 status "Patching MobileHooker.mm"
