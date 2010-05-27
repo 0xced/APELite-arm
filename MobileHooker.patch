@@ -1,0 +1,16 @@
+Index: mobilesubstrate/MobileHooker.mm
+===================================================================
+--- mobilesubstrate/MobileHooker.mm	(revision 3194)
++++ mobilesubstrate/MobileHooker.mm	(working copy)
+@@ -50,10 +50,7 @@
+ } while (false)
+ 
+ #ifdef __APPLE__
+-#import <CoreFoundation/CFLogUtilities.h>
+-/* XXX: proper CFStringRef conversion */
+-#define lprintf(format, ...) \
+-    CFLog(kCFLogLevelNotice, CFSTR(format), ## __VA_ARGS__)
++#define lprintf(format, ...)
+ #else
+ #define lprintf(format, ...) do { \
+     fprintf(stderr, format...); \
