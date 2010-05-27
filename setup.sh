@@ -9,7 +9,7 @@ status "Downloading the APE SDK"
 curl -LO# "http://www.unsanity.net/apesdk-26.dmg"
 
 status "Mounting the APE SDK disk image"
-hdiutil attach "apesdk-26.dmg"
+hdiutil attach -nobrowse -noautoopen "apesdk-26.dmg"
 
 status "Copying APE Lite"
 cp -R "/Volumes/Application Enhancer SDK/APE Lite" .
